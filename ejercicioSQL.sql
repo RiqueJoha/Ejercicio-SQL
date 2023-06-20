@@ -36,3 +36,10 @@ VALUES
   ('Película 7', 2024, 60.50, 'Director 7', NULL, FALSE);
 
 ALTER TABLE peliculas ALTER COLUMN tiene_plataforma_streaming SET DEFAULT (plataforma_streaming != "no tiene");
+
+ALTER TABLE peliculas ADD COLUMN valio_la_pena BOOLEAN DEFAULT (recaudacion_millones > 80.50);
+
+INSERT INTO peliculas (nombre, ano_estreno, recaudacion_millones, director, plataforma_streaming)
+VALUES
+  ('Película 8', 2025, 90.75, 'Director 8', 'Plataforma 8'),
+  ('Película 9', 2026, 70.25, 'Director 9', NULL);
