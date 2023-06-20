@@ -43,3 +43,7 @@ INSERT INTO peliculas (nombre, ano_estreno, recaudacion_millones, director, plat
 VALUES
   ('Película 8', 2025, 90.75, 'Director 8', 'Plataforma 8'),
   ('Película 9', 2026, 70.25, 'Director 9', NULL);
+
+UPDATE peliculas SET plataforma_streaming = default WHERE plataforma_streaming IS NULL;
+
+ UPDATE peliculas SET tiene_plataforma_streaming=default;
