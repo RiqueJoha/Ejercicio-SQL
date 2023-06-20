@@ -25,3 +25,14 @@ INSERT INTO peliculas (nombre, ano_estreno, recaudacion_millones, director, plat
 VALUES
   ('Película 4', 2022, 90.80, 'Director 4', 'Plataforma 4', TRUE),
   ('Película 5', 2023, 70.50, 'Director 5', NULL, FALSE);
+
+ALTER TABLE peliculas ADD COLUMN plataforma_streaming VARCHAR(255) DEFAULT 'No tiene';
+ALTER TABLE peliculas ADD COLUMN tiene_plataforma_streaming BOOLEAN DEFAULT FALSE;
+
+
+INSERT INTO peliculas (nombre, ano_estreno, recaudacion_millones, director, plataforma_streaming, tiene_plataforma_streaming)
+VALUES
+  ('Película 6', 2023, 80.25, 'Director 6', 'Plataforma 6', TRUE),
+  ('Película 7', 2024, 60.50, 'Director 7', NULL, FALSE);
+
+ALTER TABLE peliculas ALTER COLUMN tiene_plataforma_streaming SET DEFAULT (plataforma_streaming != "no tiene");
