@@ -16,3 +16,12 @@ VALUES
   ('Película 1', 2020, 100.50, 'Director 1', 'Netflix'),
   ('Película 2', 2019, 150.75, 'Director 2', 'Amazon'),
   ('Película 3', 2021, 80.25, 'Director 3', 'HBO');
+
+ALTER TABLE peliculas ADD COLUMN tiene_plataforma_streaming BOOLEAN;
+
+UPDATE peliculas SET tiene_plataforma_streaming = (plataforma_streaming IS NOT NULL);
+
+INSERT INTO peliculas (nombre, ano_estreno, recaudacion_millones, director, plataforma_streaming, tiene_plataforma_streaming)
+VALUES
+  ('Película 4', 2022, 90.80, 'Director 4', 'Plataforma 4', TRUE),
+  ('Película 5', 2023, 70.50, 'Director 5', NULL, FALSE);
